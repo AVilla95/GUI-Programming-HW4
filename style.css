@@ -1,0 +1,61 @@
+/*
+Name: Armando Villa
+Date: 10/30/2024
+Description: The css stylesheet that manipulates the form
+elements and the generated table
+
+*/
+/* Background */
+body
+{
+    background-color: white;
+    font-size: 20px;
+}
+/* General Table Styling */
+table
+{
+    text-align: center;
+    padding: 0%;
+    margin-top: 2%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x:auto;
+    overflow-y:auto;
+    display:block;
+}
+/* Give each value a border */
+table > tbody > tr > td
+{
+    border: 1px solid black;
+    margin:0%;
+}
+
+/* Rims of the table */
+table > tbody > tr:first-child, table > tbody > tr > td:first-child
+{
+    font-weight: bold;
+    font-size: 24px;
+    background-color: greenyellow;
+    color: black;
+}
+
+/* Checkerboard */
+table > tbody > tr:nth-child(2n+2) > td:nth-child(2n), table > tbody > tr:nth-child(2n+3) > td:nth-child(2n+3)
+{
+    background-color: darkgreen;
+    color:white;
+}
+
+/* Input Boxes */
+input
+{
+    height: 20px;
+}
+
+/* Submit Button */
+#submitButton
+{
+    font-weight: bold;
+    width:17%;
+}

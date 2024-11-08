@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Name: Armando Villa
+Date: 10/30/2024
+Description: A website that works by taking in 4 inputs for the size 
+of a multiplication table. It then takes the inputs and generates the table.
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Multiplication Table</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+    <body>
+        <!-- Form -->
+        <form>
+            <h1>Multiplication Table</h1>
+            <h3>by Armando Villa</h3>
+            <!-- User inputs for the table-->
+            <!-- Minimum Column -->
+            <p>
+                Minimum column value:
+            </p>
+            <input type="number" id="min_col">
+            
+            <!-- Maximum Column -->
+            <p>
+                Maximum column value:
+            </p>
+            <input type="number" id="max_col">
+            
+            <!-- Minimum Row -->
+            <p>
+                Minimum row value:
+            </p>
+            <input type="number" id="min_row">
+            
+            <!-- Maximum Row -->
+            <p>
+                Maximum row value:
+            </p>
+            <input type="number" id="max_row">
+
+            <br><br>
+            
+            <!-- Submit Button -->
+            <input type = "submit" id = "submitButton" value = "Submit">
+
+            <br><br>
+
+            <!-- Where the table will be generated -->
+            <div id = "myTable"></div>
+        </form>
+	</body>
+    <script src="script.js"></script>
+        
+</html>
