@@ -6,11 +6,10 @@ used for the HTML file from user inputs.
 
 */
 
-// Minimum and Maximum amount that can be entered into the inputs
-// Can be changed later if needed
-let min_amount = -50;
-let max_amount = 50;
+$(function(){
+    $("#min_col").slider();
 
+});
 // Event listener for the Submit Button
 document.getElementById("submitButton").addEventListener("click", function()
 {
@@ -26,24 +25,39 @@ document.getElementById("submitButton").addEventListener("click", function()
     // Stores the array generated from submitNumbers
     var finalArray = submitNumbers(parseInt(p1.value), parseInt(p2.value), parseInt(p3.value), parseInt(p4.value));
     // Change the array into an HTML table
-    if(finalArray)
-    {
-        var finalTable = arrayToTable(finalArray);
-        
-        // Implant the array into the HTML code
-        document.getElementById("myTable").innerHTML = '';
-        document.getElementById("myTable").append(finalTable);
-    }
+    var finalTable = arrayToTable(finalArray);
+    
+    // Implant the array into the HTML code
+    document.getElementById("myTable").innerHTML = '';
+    document.getElementById("myTable").append(finalTable);
 });
 
 // Function that takes the inputted numbers and creates a
 // 2d array with the correctly multiplicated values.
 function submitNumbers(min_col, max_col, min_row, max_row)
 {
-    // Error Handling first
-    if(!errorCheck(min_col, max_col, min_row, max_row))
+    min_amount = -50;
+    max_amount = 50;
+
+    // Empty inputs
+    if(isNan(min_col) || isNan(max_col) || isNan(min_row) || isNan(max_row))
     {
-        return 0;
+        return null;
+    }
+    // Minimum size is greater than maximum
+    if(min_col > max_col || min_row > max_row)
+    {
+        return null;
+    }
+    // Check if they're numbers
+    if(!isInt(min_col) || !isInt(max_col) || !isInt(min_row) || !isInt(max_row))
+    {
+        return null;
+    }
+    // Minumum or Maximum values exceeded
+    if(min_col < min_amount || max_col > max_amount || min_row < min_amount || max_row > max_amount)
+    {
+        return null;
     }
 
     // Array creation and variables
@@ -95,43 +109,6 @@ function arrayToTable(TwoDArray)
         }
     }
     return table;
-}
-
-// Error Handling
-function errorCheck (min_col, max_col, min_row, max_row)
-{
-    // Try and Catch Errors
-    try
-    {
-        // Empty inputs or incorrect value
-        if(isNan(min_col) || isNan(max_col) || isNan(min_row) || isNan(max_row))
-        {
-            throw "at least one of the inputs are empty or not a number";
-        }
-        // Minimum size is greater than maximum
-        if(min_col > max_col || min_row > max_row)
-        {
-            throw "Minimum size for either column or row is too large";
-        }
-        // Check if they're numbers
-        if(!isInt(min_col) || !isInt(max_col) || !isInt(min_row) || !isInt(max_row))
-        {
-            throw "at least one of the inputs are not numbers";
-        }
-        // Minumum or Maximum values exceeded
-        if(min_col < min_amount || max_col > max_amount || min_row < min_amount || max_row > max_amount)
-        {
-            throw "at least one of the inputs is too small or too large. Min: " + min_amount + ", Max: "+ max_amount;
-        }
-    }
-    catch(err)
-    {
-        // console.log("Error: " + err);
-        var error = document.getElementById("myTable");
-        error.innerHTML = "Error: " + err;
-        return 0;
-    }
-    return 1;
 }
 
 // Checks if the value is an int

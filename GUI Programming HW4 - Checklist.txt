@@ -1,0 +1,28 @@
+GUI Programming HW4 - Checklist
+
+Part 1 - Validation
+1. Setup the script plugin for validation
+
+2. Validate all data entered by the user using the plugin
+
+3. Create more specific error messages
+
+4. Test it
+
+
+Part 2 - jQuery Slider + Tab Widgets
+1. Copy over old code
+
+
+// Add jQuery cdn instead of development bundles
+2. Add jQuery UI sliders for text input fields
+- Allows for typing and sliding
+- Maximum and minimum set
+- Implement "two-way binding"
+- Table should update dynamically when new value is entered or slider is used
+
+3. Create Tab UI.
+- Create new tabs with labels with the four parameters used for creating it
+- Provide UI that deletes single tabs.
+- Provide UI that allows for the deletion of multiple tabs
+- Test it
