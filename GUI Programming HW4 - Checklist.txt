@@ -26,3 +26,18 @@ Part 2 - jQuery Slider + Tab Widgets
 - Provide UI that deletes single tabs.
 - Provide UI that allows for the deletion of multiple tabs
 - Test it
+
+
+Potential Scripts
+
+    <!-- JQuery Core -->
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    
+    <!-- JQuery Widgets-->
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    
+    <!-- JQuery Mouse UI -->
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+
+    <!-- JQuery Slider-->
+    <script src="development-bundle/ui/jquery.ui.slider.js"></script>
