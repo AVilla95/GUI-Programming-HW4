@@ -28,7 +28,7 @@ $(document).ready(function() {
             min: min_amount,
             max: max_amount,
             step: 1,
-            value: 0
+            value: 1
         });
     
         // Getting Slider Values from Input Values
